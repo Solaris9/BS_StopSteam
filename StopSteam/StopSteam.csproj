@@ -101,4 +101,8 @@
         <None Include="Directory.Build.targets" Condition="Exists('Directory.Build.targets')" />
         <None Include="StopSteam.csproj.user" Condition="Exists('StopSteam.csproj.user')" />
     </ItemGroup>
+    <ItemGroup>
+      <None Remove="UI\Settings.bsml" />
+      <EmbeddedResource Include="UI\Settings.bsml" />
+    </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 using IPA;
 using IPA.Config;
 using IPA.Config.Stores;
+using SiraUtil.Zenject;
 using StopSteam.Configuration;
 using IPALogger = IPA.Logging.Logger;
 
@@ -13,7 +14,11 @@ namespace StopSteam
         private PluginConfig _config;
 
         [Init]
-        public void Init(Config config) => _config = config.Generated<PluginConfig>();
+        public void Init(Zenjector zenjector, Config config)
+        {
+            _config = config.Generated<PluginConfig>(); ;
+            zenjector.Install<MenuInstaller>(Location.Menu, _config);
+        }
 
         [OnExit]
         public void OnApplicationClose()

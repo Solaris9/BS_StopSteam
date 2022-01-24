@@ -5,7 +5,7 @@ using IPA.Config.Stores;
 
 namespace StopSteam.Configuration
 {
-    internal class PluginConfig
+    public class PluginConfig
     {
         public virtual bool StopSteam { get; set; } = false;
     }
